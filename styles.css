@@ -153,7 +153,7 @@ textarea:focus {
 
 .quote-bubble {
   position: relative;
-  margin: 0;
+  margin: 0 0 42px;
   border: 5px solid #dedede;
   background: #fff;
   padding: 32px 22px 30px;
@@ -164,9 +164,9 @@ textarea:focus {
   content: "";
   position: absolute;
   left: 27%;
-  bottom: -37px;
-  width: 42px;
-  height: 42px;
+  bottom: -31px;
+  width: 34px;
+  height: 34px;
   background: #fff;
   border-left: 5px solid #dedede;
   transform: skewX(-43deg);
@@ -278,7 +278,7 @@ textarea:focus {
 
 .quote-list {
   display: grid;
-  gap: 28px;
+  gap: 18px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -286,7 +286,7 @@ textarea:focus {
 
 .quote-item {
   display: grid;
-  gap: 12px;
+  gap: 0;
 }
 
 .quote-meta {
@@ -295,6 +295,9 @@ textarea:focus {
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+  margin-top: -14px;
+  position: relative;
+  z-index: 2;
 }
 
 .quote-tags {
@@ -387,5 +390,27 @@ textarea:focus {
   .primary-button,
   .secondary-button {
     grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 430px) {
+  .quote-bubble {
+    margin-bottom: 46px;
+    padding: 28px 18px 28px;
+  }
+
+  .quote-bubble::before {
+    left: 25%;
+    bottom: -29px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .quote-bubble::after {
+    width: 25%;
+  }
+
+  .quote-meta {
+    margin-top: -10px;
   }
 }
