@@ -166,22 +166,24 @@ textarea:focus {
   content: "";
   position: absolute;
   left: 26%;
-  bottom: -47px;
-  width: 58px;
-  height: 47px;
-  background: var(--bubble-border);
-  clip-path: polygon(0 0, 100% 0, 0 100%);
+  bottom: -44px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 44px 44px 0 0;
+  border-color: var(--bubble-border) transparent transparent transparent;
 }
 
 .quote-bubble::after {
   content: "";
   position: absolute;
-  left: calc(26% + 13px);
-  bottom: -31px;
-  width: 36px;
-  height: 31px;
-  background: #fffdf8;
-  clip-path: polygon(0 0, 100% 0, 0 100%);
+  left: calc(26% + 8px);
+  bottom: -30px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 30px 30px 0 0;
+  border-color: #fffdf8 transparent transparent transparent;
 }
 
 .quote-bubble p {
@@ -190,6 +192,7 @@ textarea:focus {
   font-size: clamp(1.1rem, 5vw, 1.55rem);
   font-weight: 750;
   line-height: 1.45;
+  white-space: pre-line;
   word-break: keep-all;
   overflow-wrap: anywhere;
 }
@@ -404,16 +407,14 @@ textarea:focus {
 
   .quote-bubble::before {
     left: 25%;
-    bottom: -43px;
-    width: 52px;
-    height: 43px;
+    bottom: -40px;
+    border-width: 40px 40px 0 0;
   }
 
   .quote-bubble::after {
-    left: calc(25% + 12px);
-    bottom: -28px;
-    width: 32px;
-    height: 28px;
+    left: calc(25% + 8px);
+    bottom: -27px;
+    border-width: 27px 27px 0 0;
   }
 
   .quote-meta {
