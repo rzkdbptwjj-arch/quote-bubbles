@@ -173,7 +173,7 @@ function renderQuotes(items) {
       </div>
     `;
 
-    item.querySelector("p").textContent = quote.text;
+  item.querySelector("p").textContent = stripOuterQuotes(quote.text);
     item.querySelector("footer").textContent = quote.source;
     const tags = item.querySelector(".quote-tags");
     quote.tags.forEach((tag) => {
@@ -229,7 +229,7 @@ function resetForm() {
 }
 
 function updatePreview() {
-  previewQuote.textContent = quoteInput.value.trim() || "인용구 말풍선 사용";
+  previewQuote.textContent = stripOuterQuotes(quoteInput.value.trim()) || "인용구 말풍선 사용";
   previewSource.textContent = sourceInput.value.trim() || "출처 입력";
 }
 
@@ -250,6 +250,10 @@ function makeTagButton(text, active) {
 
 function normalize(value) {
   return String(value || "").replace(/\s+/g, "").toLowerCase();
+}
+
+function stripOuterQuotes(value) {
+  return String(value || "").trim().replace(/^["“”'‘’]+|["“”'‘’]+$/g, "");
 }
 
 function findQuote(id) {
