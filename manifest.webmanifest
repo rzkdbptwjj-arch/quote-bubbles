@@ -1,0 +1,17 @@
+{
+  "name": "말풍선 인용구",
+  "short_name": "인용구",
+  "description": "인용구와 출처, 태그를 말풍선 카드로 저장하고 검색하는 앱",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f3f0eb",
+  "theme_color": "#f3f0eb",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

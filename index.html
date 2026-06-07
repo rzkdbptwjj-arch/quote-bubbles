@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#f3f0eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="말풍선 인용구">
+    <title>말풍선 인용구</title>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/icon.svg">
+    <link rel="stylesheet" href="styles.css?v=20260607-1">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">기억하고 싶은 문장</p>
+          <h1>말풍선 인용구</h1>
+        </div>
+        <svg class="hero-art" viewBox="0 0 180 180" aria-hidden="true">
+          <path d="M28 42h124v74H92l-28 28v-28H28Z" fill="#fffdf8" stroke="#24221f" stroke-width="8" stroke-linejoin="round"/>
+          <path d="M55 71h72M55 94h48" stroke="#8b7460" stroke-width="8" stroke-linecap="round"/>
+        </svg>
+      </header>
+
+      <section class="panel composer" aria-labelledby="composer-title">
+        <div class="section-heading">
+          <h2 id="composer-title">인용구 만들기</h2>
+          <span id="editStatus">새 기록</span>
+        </div>
+
+        <form id="quoteForm">
+          <label>
+            <span>인용구</span>
+            <textarea id="quoteInput" rows="4" placeholder="기억하고 싶은 문장을 적어주세요.">인용구 말풍선 사용</textarea>
+          </label>
+          <label>
+            <span>출처</span>
+            <input id="sourceInput" placeholder="책, 사람, 영화, 강의 등" value="출처 입력">
+          </label>
+          <label>
+            <span>태그</span>
+            <input id="tagInput" placeholder="쉼표로 구분: 위로, 공부, 사랑">
+          </label>
+
+          <div class="preview-wrap" aria-label="말풍선 미리보기">
+            <article class="quote-bubble preview-bubble">
+              <p id="previewQuote">인용구 말풍선 사용</p>
+              <footer id="previewSource">출처 입력</footer>
+            </article>
+          </div>
+
+          <button class="primary-button" type="submit">
+            <span id="submitLabel">저장하기</span>
+            <span aria-hidden="true">+</span>
+          </button>
+          <button id="cancelEditButton" class="secondary-button" type="button" hidden>수정 취소</button>
+        </form>
+      </section>
+
+      <section class="panel search-panel" aria-labelledby="search-title">
+        <div class="section-heading">
+          <h2 id="search-title">검색</h2>
+          <span id="resultCount">0개</span>
+        </div>
+        <label class="search-label">
+          <span>인용구, 출처, 태그 검색</span>
+          <input id="searchInput" placeholder="예: 위로, 니체, 사랑">
+        </label>
+        <div id="tagFilter" class="tag-filter" aria-label="태그 필터"></div>
+      </section>
+
+      <section class="panel library-panel" aria-labelledby="library-title">
+        <div class="section-heading">
+          <h2 id="library-title">저장한 말풍선</h2>
+          <span id="totalCount">0개</span>
+        </div>
+        <div id="emptyState" class="empty-state">
+          <svg viewBox="0 0 160 160" aria-hidden="true">
+            <path d="M24 36h112v72H82l-28 28v-28H24Z" fill="#fffdf8" stroke="#d8d1c8" stroke-width="8" stroke-linejoin="round"/>
+            <path d="M52 65h56M52 88h38" stroke="#8b7460" stroke-width="8" stroke-linecap="round"/>
+          </svg>
+          <p>첫 문장을 저장하면 여기에 말풍선 카드가 쌓여요.</p>
+        </div>
+        <div class="quote-scroll">
+          <ul id="quoteList" class="quote-list"></ul>
+        </div>
+      </section>
+
+      <section class="utility-row" aria-label="데이터 관리">
+        <button id="sampleButton" type="button">예시 넣기</button>
+        <button id="exportButton" type="button">백업 내보내기</button>
+        <label class="import-button">
+          <input id="importInput" type="file" accept="application/json">
+          백업 가져오기
+        </label>
+      </section>
+    </main>
+
+    <script src="app.js?v=20260607-1"></script>
+  </body>
+</html>

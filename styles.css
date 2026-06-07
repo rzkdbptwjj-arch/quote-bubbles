@@ -1,0 +1,391 @@
+:root {
+  color-scheme: light;
+  --bg: #f3f0eb;
+  --ink: #24221f;
+  --muted: #766e64;
+  --panel: #fffdf8;
+  --line: #d8d1c8;
+  --accent: #8b7460;
+  --rose: #c86161;
+  --sage: #617b63;
+  --soft: #ebe4db;
+  --shadow: 0 18px 42px rgba(62, 51, 41, 0.11);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--bg);
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
+  letter-spacing: 0;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app-shell {
+  width: min(100%, 820px);
+  margin: 0 auto;
+  padding: max(18px, env(safe-area-inset-top)) 18px max(30px, env(safe-area-inset-bottom));
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 128px;
+}
+
+.eyebrow,
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+.eyebrow {
+  margin-bottom: 4px;
+  color: var(--sage);
+  font-size: 0.88rem;
+  font-weight: 850;
+}
+
+h1 {
+  font-size: clamp(2.3rem, 11vw, 4.7rem);
+  line-height: 0.98;
+}
+
+h2 {
+  font-size: 1.05rem;
+}
+
+.hero-art {
+  flex: 0 0 auto;
+  width: clamp(88px, 28vw, 134px);
+  height: auto;
+}
+
+.panel {
+  margin-top: 14px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.section-heading span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 850;
+}
+
+form {
+  display: grid;
+  gap: 13px;
+  margin-top: 14px;
+}
+
+label span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 850;
+}
+
+input,
+textarea {
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  outline: none;
+}
+
+input {
+  min-height: 48px;
+  padding: 0 12px;
+}
+
+textarea {
+  min-height: 112px;
+  padding: 12px;
+  resize: vertical;
+  line-height: 1.55;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(139, 116, 96, 0.16);
+}
+
+.preview-wrap {
+  padding: 14px 0 4px;
+}
+
+.quote-bubble {
+  position: relative;
+  margin: 0;
+  border: 5px solid #dedede;
+  background: #fff;
+  padding: 32px 22px 30px;
+  text-align: center;
+}
+
+.quote-bubble::before {
+  content: "";
+  position: absolute;
+  left: 27%;
+  bottom: -37px;
+  width: 42px;
+  height: 42px;
+  background: #fff;
+  border-left: 5px solid #dedede;
+  transform: skewX(-43deg);
+}
+
+.quote-bubble::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 27%;
+  border-bottom: 5px solid #dedede;
+}
+
+.quote-bubble p {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(1.1rem, 5vw, 1.55rem);
+  font-weight: 750;
+  line-height: 1.45;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.quote-bubble footer {
+  position: relative;
+  z-index: 1;
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.primary-button,
+.secondary-button,
+.utility-row button,
+.import-button {
+  min-height: 48px;
+  border: 0;
+  border-radius: 8px;
+  padding: 0 14px;
+  font-weight: 900;
+}
+
+.primary-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--ink);
+  color: #fff;
+}
+
+.primary-button span:last-child {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  background: var(--rose);
+}
+
+.secondary-button {
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+}
+
+.search-label {
+  display: block;
+  margin-top: 14px;
+}
+
+.tag-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tag-chip,
+.quote-tag {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 850;
+}
+
+.tag-chip {
+  min-height: 34px;
+  padding: 0 12px;
+}
+
+.tag-chip.active {
+  background: var(--ink);
+  color: #fff;
+}
+
+.quote-scroll {
+  max-height: 560px;
+  margin-top: 14px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 2px 4px 38px 0;
+  scrollbar-color: #a79d91 transparent;
+}
+
+.quote-list {
+  display: grid;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.quote-item {
+  display: grid;
+  gap: 12px;
+}
+
+.quote-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.quote-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.quote-tag {
+  padding: 5px 9px;
+}
+
+.quote-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.edit-button,
+.delete-button {
+  min-width: 44px;
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0 10px;
+  font-size: 0.84rem;
+  font-weight: 900;
+}
+
+.edit-button {
+  background: #f6f1ff;
+  color: #64508e;
+}
+
+.delete-button {
+  background: #fff5f3;
+  color: #9f2f2f;
+}
+
+.empty-state {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  padding: 28px 8px 16px;
+  color: var(--muted);
+  text-align: center;
+  font-weight: 650;
+}
+
+.empty-state svg {
+  width: 92px;
+  height: 92px;
+}
+
+.utility-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.utility-row button,
+.import-button {
+  display: grid;
+  place-items: center;
+  background: #e4ddd4;
+  color: var(--ink);
+  text-align: center;
+  font-size: clamp(0.72rem, 3vw, 0.9rem);
+}
+
+.import-button input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (min-width: 720px) {
+  .app-shell {
+    padding-top: 36px;
+  }
+
+  form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  form label:first-child,
+  .preview-wrap,
+  .primary-button,
+  .secondary-button {
+    grid-column: 1 / -1;
+  }
+}
