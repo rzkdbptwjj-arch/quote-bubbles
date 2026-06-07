@@ -1,15 +1,15 @@
 :root {
   color-scheme: light;
-  --bg: #ded5ca;
+  --bg: #cfc3b7;
   --ink: #24221f;
   --muted: #766e64;
-  --panel: #fffdf8;
-  --line: #c9beb2;
-  --accent: #8b7460;
+  --panel: #fffaf2;
+  --line: #b8aa9d;
+  --accent: #6f5f50;
   --rose: #c86161;
   --sage: #617b63;
-  --soft: #ebe4db;
-  --shadow: 0 18px 42px rgba(62, 51, 41, 0.11);
+  --soft: #e1d6ca;
+  --shadow: 0 18px 42px rgba(62, 51, 41, 0.16);
 }
 
 * {
@@ -154,9 +154,9 @@ textarea:focus {
 .quote-bubble {
   position: relative;
   margin: 0 0 42px;
-  border: 5px solid #c8c0b8;
-  background: #fffefb;
-  box-shadow: 0 10px 0 rgba(58, 50, 43, 0.08);
+  border: 6px solid #84776c;
+  background: #fffdf8;
+  box-shadow: 0 12px 0 rgba(56, 47, 39, 0.18);
   padding: 32px 22px 30px;
   text-align: center;
 }
@@ -168,8 +168,9 @@ textarea:focus {
   bottom: -31px;
   width: 34px;
   height: 34px;
-  background: #fffefb;
-  border-left: 5px solid #c8c0b8;
+  background: #fffdf8;
+  border-left: 6px solid #84776c;
+  border-bottom: 6px solid #84776c;
   transform: skewX(-43deg);
 }
 
@@ -179,7 +180,7 @@ textarea:focus {
   left: 0;
   bottom: -5px;
   width: 27%;
-  border-bottom: 5px solid #c8c0b8;
+  border-bottom: 6px solid #84776c;
 }
 
 .quote-bubble p {
@@ -190,14 +191,6 @@ textarea:focus {
   line-height: 1.45;
   word-break: keep-all;
   overflow-wrap: anywhere;
-}
-
-.quote-bubble p::before {
-  content: open-quote;
-}
-
-.quote-bubble p::after {
-  content: close-quote;
 }
 
 .quote-bubble footer {

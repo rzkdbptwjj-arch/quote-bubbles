@@ -173,7 +173,7 @@ function renderQuotes(items) {
       </div>
     `;
 
-  item.querySelector("p").textContent = stripOuterQuotes(quote.text);
+  item.querySelector("p").textContent = quoteText(quote.text);
     item.querySelector("footer").textContent = quote.source;
     const tags = item.querySelector(".quote-tags");
     quote.tags.forEach((tag) => {
@@ -229,7 +229,7 @@ function resetForm() {
 }
 
 function updatePreview() {
-  previewQuote.textContent = stripOuterQuotes(quoteInput.value.trim()) || "인용구 말풍선 사용";
+  previewQuote.textContent = quoteText(quoteInput.value.trim() || "인용구 말풍선 사용");
   previewSource.textContent = sourceInput.value.trim() || "출처 입력";
 }
 
@@ -254,6 +254,10 @@ function normalize(value) {
 
 function stripOuterQuotes(value) {
   return String(value || "").trim().replace(/^["“”'‘’]+|["“”'‘’]+$/g, "");
+}
+
+function quoteText(value) {
+  return `"${stripOuterQuotes(value)}"`;
 }
 
 function findQuote(id) {
